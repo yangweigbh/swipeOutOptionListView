@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		listView = (swipeOutOptionListView) findViewById(R.id.list1);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, Cheeses.sCheeseStrings);
-		listView.setAdapter(new swipeOutOptionAdapter(this, adapter));
+		listView.setAdapter(adapter);
 		ImageView image1 = new ImageView(this);
 		image1.setImageResource(android.R.drawable.ic_media_next);
 		

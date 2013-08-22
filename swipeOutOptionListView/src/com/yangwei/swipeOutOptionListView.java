@@ -16,6 +16,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 
@@ -29,7 +30,8 @@ public class swipeOutOptionListView extends ListView {
 	private LinearLayout optionsView;
 	private Animation inAnimation;
 	private Animation outAnimation;
-	Handler handler;
+	private Handler handler;
+	private Context mContext;
 	private boolean mRequestDelay;
     
 
@@ -51,6 +53,7 @@ public class swipeOutOptionListView extends ListView {
 
 	public swipeOutOptionListView(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		mContext = context;
 		mState = State.NORMAL;
 		mDetector = new GestureDetector(context, new MySimpleOnGestureListener());
 		setupOptionsView(context);
@@ -71,6 +74,11 @@ public class swipeOutOptionListView extends ListView {
 	public boolean onTouchEvent(MotionEvent ev) {
 		mDetector.onTouchEvent(ev);
 		return super.onTouchEvent(ev);
+	}
+	
+	@Override
+	public void setAdapter(ListAdapter adapter) {
+		super.setAdapter(new swipeOutOptionAdapter(mContext, adapter));
 	}
 
 	
