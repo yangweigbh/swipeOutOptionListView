@@ -17,7 +17,9 @@ directory of your application
 To setup the listview:
 
 ``` java
-listView = (swipeOutOptionListView) findViewById(R.id.list1);
+		listView = (swipeOutOptionListView) findViewById(R.id.list1);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, Cheeses.sCheeseStrings);
+		listView.setAdapter(new swipeOutOptionAdapter(this, adapter));
 		ImageView image1 = new ImageView(this);
 		image1.setImageResource(android.R.drawable.ic_media_next);
 		

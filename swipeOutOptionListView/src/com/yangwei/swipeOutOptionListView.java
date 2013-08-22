@@ -51,8 +51,6 @@ public class swipeOutOptionListView extends ListView {
 
 	public swipeOutOptionListView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, android.R.id.text1, Cheeses.sCheeseStrings);
-		setAdapter(new swipeOutOptionAdapter(context, adapter));
 		mState = State.NORMAL;
 		mDetector = new GestureDetector(context, new MySimpleOnGestureListener());
 		setupOptionsView(context);

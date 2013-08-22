@@ -1,4 +1,4 @@
-package com.yangwei;
+package com.yangwei.swipeoutoptionlistviewexample;
 /*
  * Copyright (C) 2010 The Android Open Source Project
  *
