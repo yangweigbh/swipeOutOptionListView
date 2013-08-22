@@ -52,7 +52,6 @@ public class swipeOutOptionItemView extends FrameLayout {
 
 	public void removeContentView() {
 		removeView(mContentView);
-		
 	}
 	
 	public void showOptionsView(boolean showAnimation) {
